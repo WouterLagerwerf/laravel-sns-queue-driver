@@ -2,26 +2,23 @@
 
 namespace WouterLagerwerf\LaravelSnsQueueDriver\Jobs;
 
-use Illuminate\Queue\Jobs\Job as BaseJob;
+use Illuminate\Queue\Jobs\SqsJob;
+use Illuminate\Container\Container;
+use Aws\Sqs\SqsClient;
 use Illuminate\Queue\Jobs\JobName;
 
-class BaseSqsJob extends BaseJob
+class BaseSqsJob extends SqsJob
 {
-    protected $job;
-
-    public function __construct($container, $sqs, $queue, $job)
+    public function __construct(
+        Container $container, 
+        SqsClient $sqs, 
+        array $job, 
+        $connectionName, 
+        $queue)
     {
-        $this->container = $container;
-        $this->sqs = $sqs;
-        $this->queue = $queue;
-        $this->job = $job;
+        parent::__construct($container, $sqs, $job, $connectionName, $queue);
     }
 
-    /**
-     * Fire the job.
-     * change the fire method to call the handle method of the job class to accept the format of SNS messages instead of SQS messages.
-     * @return void
-     */
     public function fire()
     {
         $payload = $this->formatPayload($this->payload());
@@ -30,11 +27,6 @@ class BaseSqsJob extends BaseJob
         ($this->instance = $this->resolve($class))->{$method}($this, $payload['data']);
     }
 
-    /**
-     * Save the failed job.
-     * change the failed method to call the handle method of the job class to accept the format of SNS messages instead of SQS messages.
-     * @return void
-     */
     protected function failed($e)
     {
         $payload = $this->formatPayload($this->payload());
