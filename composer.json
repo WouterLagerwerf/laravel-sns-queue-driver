@@ -3,7 +3,7 @@
     "description": "A package that adds support for SNS as a queue driver for Laravel. Handy for microservice messaging",
     "require": {
         "php": "^8.2",
-        "laravel/laravel": "^11.0"
+        "laravel/framework": "^11.0"
     },
     "minimum-stability": "stable",
     "autoload": {
