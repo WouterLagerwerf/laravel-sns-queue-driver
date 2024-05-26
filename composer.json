@@ -14,7 +14,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "WouterLagerwerf\\LaravelSnsQueueDriver\\LaravelSnsQueueDriverServiceProvider"
+                "WouterLagerwerf\\LaravelSnsQueueDriver\\SnsQueueDriverServiceProvider"
             ]
         }
     },
