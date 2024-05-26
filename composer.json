@@ -5,8 +5,7 @@
         "php": "^8.2",
         "laravel/laravel": "^11.0"
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "WouterLagerwerf\\LaravelSnsQueueDriver\\": "src/"
@@ -21,7 +20,7 @@
     },
     "authors": [
         {
-            "name": "WouterLagerwerf",
+            "name": "Wouter Lagerwerf",
             "email": "43637154+WouterLagerwerf@users.noreply.github.com"
         }
     ],
