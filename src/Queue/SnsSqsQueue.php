@@ -5,7 +5,7 @@ namespace WouterLagerwerf\LaravelSnsQueueDriver\Queue;
 use Aws\Sns\SnsClient;
 use Aws\Sqs\SqsClient;
 use Illuminate\Queue\SqsQueue;
-use App\Jobs\BaseSqsJob;
+use WouterLagerwerf\LaravelSnsQueueDriver\Jobs\BaseSqsJob;
 
 class SnsSqsQueue extends SqsQueue
 {
