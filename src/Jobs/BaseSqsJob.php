@@ -44,7 +44,7 @@ class BaseSqsJob extends SqsJob
 
     private function formatPayload($payload)
     {
-        $message = $payload['Message'];
+        $message = json_decode($payload["Body"], true)["Message"];
         return json_decode($message, true);
     }
 
