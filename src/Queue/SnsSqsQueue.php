@@ -1,6 +1,6 @@
 <?php
 
-namespace Wout\LaravelSnsQueueDriver\Queue;
+namespace WouterLagerwerf\LaravelSnsQueueDriver\Queue;
 
 use Aws\Sns\SnsClient;
 use Aws\Sqs\SqsClient;

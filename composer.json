@@ -1,5 +1,5 @@
 {
-    "name": "wout/laravel-sns-queue-driver",
+    "name": "wouterlagerwerf/laravel-sns-queue-driver",
     "description": "A package that adds support for SNS as a queue driver for Laravel. Handy for microservice messaging",
     "require": {
         "php": "^8.2",
@@ -7,13 +7,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Wout\\LaravelSnsQueueDriver\\": "src/"
+            "WouterLagerwerf\\LaravelSnsQueueDriver\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Wout\\LaravelSnsQueueDriver\\LaravelSnsQueueDriverServiceProvider"
+                "WouterLagerwerf\\LaravelSnsQueueDriver\\LaravelSnsQueueDriverServiceProvider"
             ]
         }
     },

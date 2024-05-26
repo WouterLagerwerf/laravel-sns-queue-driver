@@ -1,6 +1,6 @@
 <?php
 
-namespace Wout\LaravelSnsQueueDriver\Jobs;
+namespace WouterLagerwerf\LaravelSnsQueueDriver\Jobs;
 
 use Illuminate\Queue\Jobs\Job as BaseJob;
 use Illuminate\Queue\Jobs\JobName;

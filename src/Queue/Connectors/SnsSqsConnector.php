@@ -1,8 +1,8 @@
 <?php
 
-namespace Wout\LaravelSnsQueueDriver\Queue\Connectors;
+namespace WouterLagerwerf\LaravelSnsQueueDriver\Queue\Connectors;
 
-use Wout\LaravelSnsQueueDriver\Queue\SnsSqsQueue;
+use WouterLagerwerf\LaravelSnsQueueDriver\Queue\SnsSqsQueue;
 use Aws\Sns\SnsClient;
 use Aws\Sqs\SqsClient;
 use Illuminate\Queue\Connectors\SqsConnector;

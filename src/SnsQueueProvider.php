@@ -1,6 +1,6 @@
 <?php
 
-namespace Wout\LaravelSnsQueueDriver;
+namespace WouterLagerwerf\LaravelSnsQueueDriver;
 
 use Illuminate\Support\ServiceProvider;
 
