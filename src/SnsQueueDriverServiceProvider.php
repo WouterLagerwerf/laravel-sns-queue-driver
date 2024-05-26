@@ -2,6 +2,8 @@
 
 namespace WouterLagerwerf\LaravelSnsQueueDriver;
 
+use WouterLagerwerf\LaravelSnsQueueDriver\Queue\Connectors\SnsSqsConnector;
+use Illuminate\Queue\QueueManager;
 use Illuminate\Support\ServiceProvider;
 
 class SnsQueueDriverServiceProvider extends ServiceProvider
@@ -13,7 +15,11 @@ class SnsQueueDriverServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // Register your package's services
+        $this->app->afterResolving(QueueManager::class, function (QueueManager $manager) {
+            $manager->addConnector('sns', function () {
+                return new SnsSqsConnector();
+            });
+        });
     }
 
     /**
@@ -23,6 +29,6 @@ class SnsQueueDriverServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Bootstrap your package's services
+
     }
 }
